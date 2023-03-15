@@ -23,7 +23,6 @@ export const Content = styled.div`
     margin-top: -6rem;
     position: relative;
     z-index: 2;
-    
 
 `;
 
