@@ -1,20 +1,17 @@
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./styles/themes/default";
-import { GlobalStyle } from "./styles/global";
-import { Header } from "./components/Header";
-import { Profile } from "./components/Profile";
-import { SearchForm } from "./components/SearchForm";
-import { PostBox } from "./components/PostBox";
+import { GlobalStyle } from "./styles/global"
+import { BrowserRouter, HashRouter } from "react-router-dom";
+import { Router } from "./Router";
 
 export function App() {
 
   return (
     <ThemeProvider theme={defaultTheme}>
-      <GlobalStyle/>
-      <Header />
-      <Profile />
-      <SearchForm />
-      <PostBox />
+      <BrowserRouter>
+            <Router />
+        <GlobalStyle />
+      </BrowserRouter>
     </ThemeProvider>
   )
 }
