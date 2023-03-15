@@ -4,6 +4,7 @@ import { GlobalStyle } from "./styles/global";
 import { Header } from "./components/Header";
 import { Profile } from "./components/Profile";
 import { SearchForm } from "./components/SearchForm";
+import { PostBox } from "./components/PostBox";
 
 export function App() {
 
@@ -13,6 +14,7 @@ export function App() {
       <Header />
       <Profile />
       <SearchForm />
+      <PostBox />
     </ThemeProvider>
   )
 }
