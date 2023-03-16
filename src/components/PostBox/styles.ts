@@ -7,6 +7,7 @@ export const Container = styled.div`
     justify-content: center;
     flex-wrap: wrap;
     gap: 2rem;
+
 `;
 
 export const Content = styled.div`
@@ -44,4 +45,16 @@ export const PostTitle = styled.div`
         line-height: 160%;
         color: ${props => props.theme.span};
     }
+`;
+export const TextContent = styled.div`
+    width: 100%;
+    height: 100%;
+
+div {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: ${props => props.theme.span};
+}
+    
 `;

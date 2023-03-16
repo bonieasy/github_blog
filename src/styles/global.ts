@@ -14,4 +14,12 @@ body {
 body, input, textarea, button {
     font: 400 1rem Nunito, sans-serif;
 }
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
 `;

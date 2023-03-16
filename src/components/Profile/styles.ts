@@ -42,7 +42,9 @@ export const InfoBio = styled.div`
     gap: 1rem;
 `;
 
-export const Bio = styled.span``;
+export const Bio = styled.span`
+width: 100%;
+`;
 
 export const BoxInfo = styled.div`
     display: flex;

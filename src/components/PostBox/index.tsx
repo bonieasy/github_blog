@@ -1,31 +1,50 @@
-import { Container, Content, PostTitle } from "./styles";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { api } from "../../lib/axios";
+import { formatDistanceToNow } from 'date-fns';
+import { Container, Content, PostTitle, TextContent } from "./styles";
+
+interface DataIssue {
+    created_at: string;
+    body: string;
+    id: number
+    title: string
+}
 
 export function PostBox() {
+    const [issues, setIssues] = useState<DataIssue[]>([]);
+
+    async function fetchUserData() {
+     const response = await api.get('/repos/bonieasy/reactjs-github-blog-challenge/issues')
+        
+         setIssues(response.data);
+    }
+
+    useEffect(() => {
+        fetchUserData();
+    }, [])
+    
     return(
         <Container>
-            <Content>
-                <PostTitle>
-                    <h1>JavaScript data types and data structures</h1>
-                    <span>Ha 1 dia</span>
-                </PostTitle>
-                <span>Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in </span>
-            </Content>
+            {issues.map(issue => {
+                    return(
+            <Link to="/post">
+                <Content>
+                    <PostTitle>
+                        <h1>{issue.title}</h1>
+                        <span>{formatDistanceToNow(new Date(issue.created_at), {
+                            addSuffix: true,
+                        })}
+                        </span>
+                    </PostTitle>
+                    <TextContent>
+                        <div>{issue.body}</div>
+                    </TextContent>
+                </Content>
+            </Link>
+                    )
+                })}                   
 
-            <Content>
-                <PostTitle>
-                    <h1>JavaScript</h1>
-                    <span>Ha 1 dia</span>
-                </PostTitle>
-                <span>Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in </span>
-            </Content>
-
-            <Content>
-                <PostTitle>
-                    <h1>JavaScript</h1>
-                    <span>Ha 1 dia</span>
-                </PostTitle>
-                <span>Programming languages all have built-in data structures, but these often differ from one language to another. This article attempts to list the built-in data structures available in </span>
-            </Content>
         </Container>
         
     );

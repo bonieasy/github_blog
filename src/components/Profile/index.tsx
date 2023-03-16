@@ -1,5 +1,6 @@
 import { ArrowSquareOut, Buildings, GithubLogo, Users } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
+import { api } from '../../lib/axios';
 import {Container, Avatar, NameTitle, InfoBio, Bio, BoxInfo, Content, Icon, HeaderProfile, GitLink} from './styles';
 
 interface GitDatas {
@@ -8,21 +9,21 @@ interface GitDatas {
     name: string;
     company: string;
     bio: string;
+    html_url: string;
     followers: number;
 }
 
 export function Profile() {
     const [datas, setDatas] = useState<GitDatas>();
 
-    async function loadData() {
-        const response = await fetch('https://api.github.com/users/bonieasy')
-        const data = await response.json();
-        setDatas(data);
-            //console.log(data)
+    async function fetchUserData() {
+        const response = await api.get('/users/bonieasy')
+        
+        setDatas(response.data);
     }
 
     useEffect(() => {
-       loadData();
+        fetchUserData();
     }, [])
 
     return(
@@ -34,7 +35,7 @@ export function Profile() {
                             <HeaderProfile>
                                 <NameTitle>{datas.name}</NameTitle>
                                 <GitLink>
-                                    <a href='https://github.com/bonieasy'>GITHUB</a>
+                                    <a href={datas.html_url}>GITHUB</a>
                                     <ArrowSquareOut size={12} weight="bold" />
                                 </GitLink>
                             </HeaderProfile>
