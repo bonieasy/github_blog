@@ -1,33 +1,18 @@
-import { useEffect, useState } from "react";
-import { api } from "../../lib/axios";
+import { useContext, useEffect, useState } from "react";
+import ReactMarkdown from "react-markdown";
+import { PostsContext } from "../../contexts/PostContext"
 import { Container } from "./styles";
 
-interface DataIssuePost {
-    body: string;
-    id: number
-}
-
 export function PostContent() {
-    const [post, setPost] = useState<DataIssuePost[]>([]);
-
-    async function fetchPostContent() {
-     const response = await api.get('/repos/bonieasy/reactjs-github-blog-challenge/issues')
-        
-     setPost(response.data);
-    }
-
-    useEffect(() => {
-        fetchPostContent();
-    }, [])
+    const { postData } = useContext(PostsContext);
     
     return(
         <Container>
-            {post.map(issue => {
+            {postData && postData.map(issue => {
                 return(
-                    <p>{issue.body}</p>
+                    <ReactMarkdown children={issue.body} />
                 )
             })}
-            
         </Container>
         
     );
