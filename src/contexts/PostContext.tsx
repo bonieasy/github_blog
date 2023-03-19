@@ -26,7 +26,7 @@ export function PostsProvider({ children }: PostsProviderProps) {
 
     const [postData, setPostData] = useState<DataIssuePost[]>([]);
 
-    async function fetchPostData(query?: string) {
+    async function fetchPostData(query:string = "") {
         const response = await api.get('/search/issues', {
             params: {
               q: `${query}repo:bonieasy/reactjs-github-blog-challenge`,
