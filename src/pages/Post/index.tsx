@@ -15,10 +15,9 @@ export function Post() {
         <PostPage>
             <Header />
             <PostsProvider>
-                <PostInfo />
-                <PostContent />
+                <PostInfo  />
+                <PostContent  />
             </PostsProvider>
-            
         </PostPage>
         
     );

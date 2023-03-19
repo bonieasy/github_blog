@@ -1,4 +1,5 @@
-import { ArrowSquareOut, Buildings, CaretLeft, GithubLogo, Users } from "@phosphor-icons/react";
+import { ArrowSquareOut, Buildings, CalendarBlank, CaretLeft, ChatCircle, GithubLogo, Users } from "@phosphor-icons/react";
+import { formatDistanceToNow } from "date-fns";
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { PostsContext, PostsProvider } from "../../contexts/PostContext";
@@ -33,17 +34,19 @@ export function PostInfo() {
                             <Box>
                                 <Icon>
                                     <GithubLogo size={18} />
-                                    <span>{issue.login}</span>
+                                    <span>{issue.user.login}</span>
                                 </Icon>
 
                                 <Icon>
-                                    <Buildings size={18} />
-                                    <span>Rocketseat</span>
+                                <CalendarBlank size={18} />
+                                    <span>{formatDistanceToNow(new Date(issue.created_at), {
+                                addSuffix: true,
+                            })}</span>
                                 </Icon>
                                 
                                 <Icon>
-                                    <Users size={18} />
-                                    <span>26 seguidores</span>
+                                <ChatCircle size={18} />
+                                    <span>{issue.comments}comments</span>
                                 </Icon>
                                 
                             </Box>

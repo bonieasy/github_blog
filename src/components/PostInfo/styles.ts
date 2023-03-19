@@ -30,6 +30,7 @@ export const Links = styled.div`
     justify-content: space-between;
     width: 100%;
     color: ${props => props.theme.blue};
+    text-transform: uppercase;
 
     a {
         color: inherit;

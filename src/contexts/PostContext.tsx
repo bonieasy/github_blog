@@ -7,12 +7,13 @@ interface DataIssuePost {
     created_at: string;
     login: string;
     body: string;
-    id: number
+    number: number
     title: string
 }
 
 interface PostContextData {
     postData: DataIssuePost[];
+    fetchPostData: (query?: string) => Promise<void>
 }
 
 interface PostsProviderProps {
@@ -25,10 +26,14 @@ export function PostsProvider({ children }: PostsProviderProps) {
 
     const [postData, setPostData] = useState<DataIssuePost[]>([]);
 
-    async function fetchPostData() {
-     const response = await api.get('/repos/bonieasy/reactjs-github-blog-challenge/issues')
-        
-     setPostData(response.data);
+    async function fetchPostData(query?: string) {
+        const response = await api.get('/search/issues', {
+            params: {
+              q: `${query}repo:bonieasy/reactjs-github-blog-challenge`,
+            }
+          })
+
+        setPostData(response.data.items);
     }
 
     useEffect(() => {
@@ -36,7 +41,7 @@ export function PostsProvider({ children }: PostsProviderProps) {
     }, [])
     
     return(
-        <PostsContext.Provider value={{ postData }}>
+        <PostsContext.Provider value={{ postData, fetchPostData }}>
             { children }
         </PostsContext.Provider>
     )
