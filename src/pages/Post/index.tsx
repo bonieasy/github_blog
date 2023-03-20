@@ -1,9 +1,9 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Header } from "../../components/Header";
 import { PostContent } from "../../components/PostContent";
 import { PostInfo } from "../../components/PostInfo";
-import { DataIssuePost, PostsProvider } from "../../contexts/PostContext";
+import { DataIssuePost } from "../../contexts/PostContext";
 import { api } from "../../lib/axios";
 import { PostPage } from "./styles";
 
@@ -15,25 +15,13 @@ export function Post() {
 
     const { number } = useParams();
 
-    const getPostDetails = useCallback(async () => {
-        try {    
-          const response = await api.get(
-            `/repos/bonieasy/reactjs-github-blog-challenge/issues/${number}`
-          );
-          console.log(response);
+    useEffect(() => {
+        api.get(`/repos/bonieasy/reactjs-github-blog-challenge/issues/${number}`)
+        .then((response) => {
+            setPostData(response.data)
+        })
+    })
     
-          //setPostData(response.data);
-       
-        } 
-        catch(error){
-          console.log(error)
-        }
-       
-      }, [postData]);
-    
-      useEffect(() => {
-        getPostDetails();
-      }, []);
 
     return(
         
