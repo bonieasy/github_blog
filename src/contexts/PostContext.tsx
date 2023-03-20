@@ -1,14 +1,17 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { api } from "../lib/axios";
 
-interface DataIssuePost {
+export interface DataIssuePost {
     comments: number;
     html_url: string;
     created_at: string;
-    login: string;
     body: string;
-    number: number
-    title: string
+    number: number;
+    title: string;
+    total_count: string;
+    user: {
+        login: string;
+    }
 }
 
 interface PostContextData {

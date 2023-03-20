@@ -53,7 +53,7 @@ export function Profile() {
                                 
                                 <Icon>
                                     <Users size={18} />
-                                    <span>{datas.followers}seguidores</span>
+                                    <span>{datas.followers}{' '}seguidores</span>
                                 </Icon>
                                 
                             </BoxInfo>

@@ -11,7 +11,7 @@ const { postData } = useContext(PostsContext);
     return(
         <Container>
             
-                {postData.map(function(item, index) {
+                {postData?.map(function(item, index) {
                     return(
                         <Link to={`/post/${item.number}`} key={index} >
                             <Content>
