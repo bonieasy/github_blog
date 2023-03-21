@@ -27,16 +27,16 @@ export function SearchForm() {
         <SearchFormContainer onSubmit={handleSubmit(handleSearchIssue)}>
             {postData ?
                     <FormInfos>
-                        <span>Publicacoes</span>
-                        <span>{postData.length}{' '}publicacoes</span>
+                        <span>Publications</span>
+                        <span>{postData.length}{' '}publications</span>
                     </FormInfos>
                     :
-                    <span>No posts yet</span>
+                    <span>No posts found</span>
             }
             
             <input
                 type="text"
-                placeholder="Search content"
+                placeholder="Search Posts"
                 {...register('query')}
             />
         </SearchFormContainer>

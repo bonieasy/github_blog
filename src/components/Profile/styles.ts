@@ -14,7 +14,7 @@ export const Content = styled.div`
     gap: 2rem;
 
     border-radius: 0.625rem;
-    max-width: 54rem;
+    min-width: 54rem;
     margin: 0 18rem;
     min-height: 13.250rem;
     background:${props => props.theme.profile};

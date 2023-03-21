@@ -4,7 +4,8 @@ import { PostBox } from "../../components/PostBox";
 import { Profile } from "../../components/Profile";
 import { SearchForm } from "../../components/SearchForm";
 import { PostsContext, PostsProvider } from "../../contexts/PostContext";
-import { PostList } from "./styles";
+import { Container } from "./styles";
+
 
 export function Home() {
     const { postData } = useContext(PostsContext);
@@ -12,14 +13,13 @@ export function Home() {
     return(
     <>
         <Header />
-        <Profile />
-        <PostsProvider>
-        <SearchForm />
-        <PostList>
-            <PostBox />
-                
-        </PostList>
-        </PostsProvider>
+        <Container>
+            <Profile />
+            <PostsProvider>
+            <SearchForm />
+                <PostBox />
+            </PostsProvider>
+        </Container>
     </>
     );
 } 
