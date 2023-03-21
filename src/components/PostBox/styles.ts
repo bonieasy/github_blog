@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    margin: 3rem 21rem;
+    margin: 3rem 1rem;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -15,7 +15,7 @@ export const Content = styled.div`
     border-radius: 10px;
     padding: 2rem;
     max-width: 26rem;
-    max-height: 16.25rem;
+    min-height: 16.25rem;
 
     span {
         font-family: 'Nunito';
@@ -52,7 +52,7 @@ export const TextContent = styled.div`
 
 div {
     overflow: hidden;
-    white-space: nowrap;
+    //white-space: nowrap;
     text-overflow: ellipsis;
     color: ${props => props.theme.span};
 }

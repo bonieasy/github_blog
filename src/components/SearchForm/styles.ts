@@ -4,14 +4,11 @@ export const SearchFormContainer = styled.form`
     display: flex;
     flex-direction: column;
     align-content: center;
-    //align-items: center;
     gap: 0.75rem;
     margin-top: 4.5rem;
-    //width: 100%;
-    //max-width: 54rem;
+    min-width: 54rem;
     
     input {
-        //width: 100%;
         height: 3.125rem;
         background: ${props => props.theme.input};
         color: ${props => props.theme.label};
@@ -25,5 +22,4 @@ export const FormInfos = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    //width: 100%;
 `;
