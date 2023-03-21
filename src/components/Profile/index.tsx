@@ -1,4 +1,4 @@
-import { ArrowSquareOut, Buildings, GithubLogo, Users } from '@phosphor-icons/react';
+import { ArrowSquareOut, Buildings, GithubLogo, MapPin, Users } from '@phosphor-icons/react';
 import { useEffect, useState } from 'react';
 import { api } from '../../lib/axios';
 import {Container, Avatar, NameTitle, InfoBio, Bio, BoxInfo, Content, Icon, HeaderProfile, GitLink} from './styles';
@@ -11,6 +11,7 @@ interface GitDatas {
     bio: string;
     html_url: string;
     followers: number;
+    location: string;
 }
 
 export function Profile() {
@@ -47,9 +48,14 @@ export function Profile() {
                                 </Icon>
 
                                 <Icon>
-                                    <Buildings size={18} />
-                                    <span>{datas.company}</span>
+                                    { datas.company ? 
+                                        <Buildings size={18} />    
+                                    :
+                                        <MapPin size={18} />
+                                    }
+                                    <span>{datas.company ? datas.company : datas.location}</span>
                                 </Icon>
+
                                 
                                 <Icon>
                                     <Users size={18} />

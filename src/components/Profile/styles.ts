@@ -14,9 +14,9 @@ export const Content = styled.div`
     gap: 2rem;
 
     border-radius: 0.625rem;
-    //width: 54rem;
-    margin: 0 21rem;
-    height: 13.250rem;
+    max-width: 54rem;
+    margin: 0 18rem;
+    min-height: 13.250rem;
     background:${props => props.theme.profile};
     box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
     padding: 2rem;
@@ -66,9 +66,12 @@ export const GitLink = styled.div`
     color: ${props => props.theme.blue};
     font-size: 12px;
 
-    a:visited :hover :active {
+    a {
+        color: inherit;
+    }
+
+    a:hover :visited :active :link {
         text-decoration: none;
-        color: ${props => props.theme.blue};
     }
 `;
 
