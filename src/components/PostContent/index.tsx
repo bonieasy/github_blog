@@ -8,7 +8,7 @@ interface PostContentProps {
 export function PostContent({ content }: PostContentProps) {
     
     return(
-        <Container>
+        <Container className="markdown-body">
            
             <ReactMarkdown children={content} />
                         

@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    margin: 3rem 21rem;
-    font-weight: 700;
+/* top | left and right | bottom */
+    margin: 3rem 18rem;
+    padding: 0 2rem 0;
+    font-weight: 400;
     line-height: 160%;
-    font-size: 24px;
+    font-size: 16px;
+    text-align: start;
+    
+    display: flex;
+    flex-direction: column;
+
+    
+    
 `;
 
-export const Content = styled.div``;
