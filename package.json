@@ -1,6 +1,6 @@
 {
   "homepage": "https://bonieasy.github.io/github_blog",
-  "name": "github-blog",
+  "name": "github_blog",
   "private": true,
   "version": "0.0.0",
   "type": "module",
