@@ -4,7 +4,7 @@
 The challenge was to create a blog using the Github API, where the repository issues would be the posts.
 
   
-Click <a href="https://bonieasy.github.io/github-blog/" target="_blank"> here </a> to access
+Click <a href="https://bonieasy.github.io/github_blog/" target="_blank"> here </a> to access
 
 <img src="./github-blog.png" width="680px" >
 
