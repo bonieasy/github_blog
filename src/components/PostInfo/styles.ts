@@ -4,6 +4,11 @@ export const Container = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 768px) {
+        min-width: 18rem;
+        min-height: 20rem;        
+    }
 `;
 
 export const Content = styled.div`
@@ -42,11 +47,8 @@ export const Links = styled.div`
 `;
 
 export const GitLink = styled.div`
-    
-
-    
+ 
 `;
-
 
 export const IssueTitle = styled.div`
     display: flex;

@@ -8,6 +8,11 @@ export const Container = styled.div`
     flex-wrap: wrap;
     gap: 2rem;
 
+    @media (max-width: 768px) {
+        min-width: 40rem;
+
+    }
+
 `;
 
 export const Content = styled.div`

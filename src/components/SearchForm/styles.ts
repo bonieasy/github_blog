@@ -7,6 +7,12 @@ export const SearchFormContainer = styled.form`
     gap: 0.75rem;
     margin-top: 4.5rem;
     min-width: 54rem;
+
+    @media (max-width: 768px) {
+        min-width: 25rem;
+        //min-height: 20rem;
+        
+    }
     
     input {
         height: 3.125rem;
@@ -16,6 +22,8 @@ export const SearchFormContainer = styled.form`
         border: 1px solid ${props => props.theme.border};
         border-radius: 6px;
         padding: 0.75rem 1rem;
+
+        
     }
 `;
 export const FormInfos = styled.div`

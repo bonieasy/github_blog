@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
+   
 `;
 
 export const Content = styled.div`
@@ -14,8 +12,8 @@ export const Content = styled.div`
     gap: 2rem;
 
     border-radius: 0.625rem;
-    min-width: 54rem;
-    margin: 0 18rem;
+    //min-width: 54rem;
+    //margin: 0 18rem;
     min-height: 13.250rem;
     background:${props => props.theme.profile};
     box-shadow: 0px 2px 28px rgba(0, 0, 0, 0.2);
@@ -24,6 +22,11 @@ export const Content = styled.div`
     position: relative;
     z-index: 2;
 
+    @media (max-width: 768px) {
+        min-width: 18rem;
+        min-height: 20rem;
+        
+    }
 `;
 
 export const Avatar = styled.img`
