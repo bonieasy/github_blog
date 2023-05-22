@@ -301,7 +301,7 @@ width: 100%;
     margin: 0 18rem;
 
     @media (max-width: 768px) {
-        margin: 0 4rem;        
+        margin: 0 26rem;        
     }
    
 `;function _6(){return V.useContext(Ts),be(yf,{children:[ie(Ag,{}),be(E6,{children:[ie(IE,{}),be(lS,{children:[ie(S6,{}),ie(oS,{})]})]})]})}const l0=["http","https","mailto","tel"];function C6(e){const t=(e||"").trim(),n=t.charAt(0);if(n==="#"||n==="/")return t;const r=t.indexOf(":");if(r===-1)return t;let i=-1;for(;++i<l0.length;){const l=l0[i];if(r===l.length&&t.slice(0,l.length).toLowerCase()===l)return t}return i=t.indexOf("?"),i!==-1&&r>i||(i=t.indexOf("#"),i!==-1&&r>i)?t:"javascript:void(0)"}/*!
