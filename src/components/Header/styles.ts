@@ -19,7 +19,6 @@ export const Container = styled.header`
         display: flex;
         justify-content: center;
         height: 15rem;
-        width: 100vh;
 
         img:nth-child(1) {
             display: none;
@@ -28,13 +27,12 @@ export const Container = styled.header`
         img:nth-child(2) {
         width: 9rem;
         height: 6rem;
-        
+        display: flex;
+        justify-content: center;        
     }
 
         img:nth-child(3) {
                 display: none;
             }
-        }
-
-    
+    }
 `;
