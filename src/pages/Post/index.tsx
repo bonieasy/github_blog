@@ -5,7 +5,7 @@ import { PostContent } from "../../components/PostContent";
 import { PostInfo } from "../../components/PostInfo";
 import { DataIssuePost } from "../../contexts/PostContext";
 import { api } from "../../lib/axios";
-import { PostPage } from "./styles";
+import { Container } from "./styles";
 
 // const username = import.meta.env.VITE_GITHUB_USERNAME;
 // const repoName = import.meta.env.VITE_GITHUB_REPONAME;
@@ -24,19 +24,14 @@ export function Post() {
     
 
     return(
-        
-        
-        <PostPage>
+        <>
             <Header />
             {postData && (
-                <>
+                <Container>
                     <PostInfo postData={postData} />
                     <PostContent content={postData.body}  />
-                </>
+                </Container>
             )}
-                
-            
-        </PostPage>
-        
+        </>
     );
 }

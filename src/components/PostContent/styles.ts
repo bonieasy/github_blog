@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-/* top | left and right | bottom */
-    margin: 3rem 18rem;
+    margin-top: 3rem;
     padding: 0 2rem 0;
     font-weight: 400;
     line-height: 160%;
@@ -11,9 +10,7 @@ export const Container = styled.div`
     
     display: flex;
     flex-direction: column;
+    justify-content: center;
 
-    @media (max-width: 768px) {
-        margin: 2rem 2rem;        
-    }
+    
 `;
-

@@ -42,9 +42,7 @@ export const Avatar = styled.img`
     }
 `;
 
-export const NameTitle = styled.h1`
-
-`;
+export const NameTitle = styled.h1``;
 
 export const InfoBio = styled.div`
     display: flex;
@@ -73,6 +71,12 @@ export const BoxInfo = styled.div`
 export const HeaderProfile = styled.header`
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 768px) {
+        display:flex;
+        flex-direction: column-reverse;
+        gap: 0.5rem;
+    }
 `;
 
 export const GitLink = styled.div`
