@@ -1,25 +1,33 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const Container = styled.div`
-    margin: 3rem 1rem;
+/* top and bottom | left and right */
+    margin-top: 3rem;
     display: flex;
     flex-direction: row;
-    justify-content: center;
     flex-wrap: wrap;
+    justify-content: flex-start;
     gap: 2rem;
 
     @media (max-width: 768px) {
-        min-width: 40rem;
-
+        margin: 2rem 0;
     }
+`;
 
+export const LinkStyle = styled(Link)`
+    width: calc(50% - 1rem);
+    
+    @media (max-width: 768px) {
+        width: 100%;
+    }
 `;
 
 export const Content = styled.div`
     background: ${props => props.theme.post};
     border-radius: 10px;
     padding: 2rem;
-    max-width: 26rem;
+    //max-width: 26rem;
     min-height: 16.25rem;
 
     span {

@@ -5,13 +5,15 @@ export const SearchFormContainer = styled.form`
     flex-direction: column;
     align-content: center;
     gap: 0.75rem;
-    margin-top: 4.5rem;
-    min-width: 54rem;
+    /* top | left and right | bottom */
+    margin: 4.5rem 0 0;
+    width: 100%;
 
     @media (max-width: 768px) {
-        min-width: 25rem;
+        //min-width: 25rem;
         //min-height: 20rem;
-        
+        //margin: 2rem 1rem 0;
+        width: 100%;
     }
     
     input {

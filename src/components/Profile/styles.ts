@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-   
+   width: 100%;
 `;
 
 export const Content = styled.div`
@@ -23,9 +23,10 @@ export const Content = styled.div`
     z-index: 2;
 
     @media (max-width: 768px) {
-        min-width: 18rem;
+        //min-width: 18rem;
         min-height: 20rem;
-        
+        padding:1rem;
+        gap: 1rem;
     }
 `;
 
@@ -33,6 +34,12 @@ export const Avatar = styled.img`
     border-radius: 8px;
     width: 9.250rem;
     height: 9.250rem;
+
+    @media (max-width: 768px) {
+        width: 8rem;
+        height: 8rem;
+        
+    }
 `;
 
 export const NameTitle = styled.h1`
@@ -55,6 +62,12 @@ export const BoxInfo = styled.div`
     justify-content: flex-start;
     align-items: baseline;
     gap: 1.5rem;
+
+    @media (max-width: 768px) {
+        display:flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 `;
 
 export const HeaderProfile = styled.header`

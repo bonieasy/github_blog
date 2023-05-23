@@ -1,7 +1,6 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
 import { formatDistanceToNow } from 'date-fns';
-import { Container, Content, PostTitle, TextContent } from "./styles";
+import { Container, Content, PostTitle, TextContent, LinkStyle } from "./styles";
 import { PostsContext } from "../../contexts/PostContext";
 
 export function PostBox() {
@@ -12,7 +11,7 @@ const { postData } = useContext(PostsContext);
         <Container>
             {postData?.map(function(item, index) {
                 return(
-                    <Link to={`/post/${item.number}`} key={index} >
+                    <LinkStyle to={`/post/${item.number}`} key={index} >
                         <Content>
                             <PostTitle>
                                 <h1>{item.title}</h1>
@@ -25,7 +24,7 @@ const { postData } = useContext(PostsContext);
                                 <div>{item.body.slice(0, 150)}...</div>
                             </TextContent>
                         </Content>
-                    </Link>
+                    </LinkStyle>
                 )
             })}
         </Container>
